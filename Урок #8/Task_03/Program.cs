@@ -9,6 +9,7 @@
     double result = x / USD;
     Console.WriteLine(result);
 */
+{
 double UsdToRub = 90.06;
 double USD;
 
@@ -17,3 +18,4 @@ Console.WriteLine("Введите сумму в USD");
 USD = double.Parse(Console.ReadLine());
 
 Console.WriteLine(USD + " USD в RUB = " + USD * UsdToRub);
+}
