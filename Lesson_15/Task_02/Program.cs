@@ -27,63 +27,66 @@ if (c == "/")
 }
 */
 //
-//Console.Clear();  // 
-double firstNumber, secondNumber;  // объявляем вещестенные переменные
-string action;  // объявляем строчную переменную операторов
 
-Console.WriteLine("Введите первое число: ");
-firstNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
-
-Console.WriteLine("Введите второе число: ");
-secondNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
-
-// чтоб избежать введения неправильных данных используем следующий метод
-/*
-try
+while (true)
 {
+    double firstNumber, secondNumber;  // объявляем вещестенные переменные
+    string action;  // объявляем строчную переменную операторов
+    /*
     Console.WriteLine("Введите первое число: ");
     firstNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
 
     Console.WriteLine("Введите второе число: ");
     secondNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
-
-}
-catch (Exception)
-{
-    Console.WriteLine("Не удалось преобразовать строку в число! Введите другое число");
-    //Console.ReadLine();
-    continue; // данная команда возращает обратно для введения правильных данных. Иначе программа попытается исполнить код ниже, но выдаст ошибку.
-}
-*/
-Console.WriteLine("Введите операцию: '+' '-' '*' '/' ");
-action = Console.ReadLine();  //задаем оператор
-
-if (action == "+") // через if и else проверяем введенный оператор и выполняем соответствующую операцию
-{
-    Console.WriteLine(firstNumber + secondNumber);
-}
-else if (action == "-")
-{
-    Console.WriteLine(firstNumber - secondNumber);
-}
-else if (action == "*")
-{
-    Console.WriteLine(firstNumber * secondNumber);
-}
-else if (action == "/")
-{
-    if (secondNumber == 0)  //проверяем введенное число на равенство нулю, если равно, то просив ввести др. число
+    */
+    // чтоб избежать введения неправильных данных используем следующий метод
+    
+    try
     {
-        Console.WriteLine("На нуль делить нельзя. Ведите другое число.");
+        Console.WriteLine("Введите первое число: ");
+        firstNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
+
+        Console.WriteLine("Введите второе число: ");
+        secondNumber = double.Parse(Console.ReadLine());  //конвертируем сразу из строки в вещественную переменную
+
     }
-    else  // если нет, то выполняем действие
+    catch (Exception)
     {
-        Console.WriteLine(firstNumber / secondNumber);
+        Console.WriteLine("Не удалось преобразовать строку в число! Введите другое число");
+        //Console.ReadLine();
+        continue; // данная команда возращает обратно для введения правильных данных. Иначе программа попытается исполнить код ниже, но выдаст ошибку.
     }
+    
+    Console.WriteLine("Введите операцию: '+' '-' '*' '/' ");
+    action = Console.ReadLine();  //задаем оператор
+
+    if (action == "+") // через if и else проверяем введенный оператор и выполняем соответствующую операцию
+    {
+        Console.WriteLine(firstNumber + secondNumber);
+    }
+    else if (action == "-")
+    {
+        Console.WriteLine(firstNumber - secondNumber);
+    }
+    else if (action == "*")
+    {
+        Console.WriteLine(firstNumber * secondNumber);
+    }
+    else if (action == "/")
+    {
+        if (secondNumber == 0)  //проверяем введенное число на равенство нулю, если равно, то просив ввести др. число
+        {
+            Console.WriteLine("На нуль делить нельзя. Ведите другое число.");
+        }
+        else  // если нет, то выполняем действие
+        {
+            Console.WriteLine(firstNumber / secondNumber);
+        }
+    }
+    else  // если введеный символ не равен ни одному из перечисленных операторов, то указываем на ошибку
+    {
+        Console.WriteLine("Ошибка! Введен неверный символ оператора!");
+    }
+    Console.ReadLine();
+    Console.Clear();
 }
-else  // если введеный символ не равен ни одному из перечисленных операторов, то указываем на ошибку
-{
-    Console.WriteLine("Ошибка! Введен неверный символ оператора!");
-}
-Console.ReadLine();
-Console.Clear();
