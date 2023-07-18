@@ -1,4 +1,5 @@
 ﻿// Напишите программу, проверяющую число, введенное с клавиатуры на четность.
+
 internal class Program
 {
     private static void Main(string[] args)
