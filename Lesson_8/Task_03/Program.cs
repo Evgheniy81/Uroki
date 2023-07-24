@@ -9,6 +9,7 @@
     double result = x / USD;
     Console.WriteLine(result);
 */
+
 {
 double UsdToRub = 90.06;
 double USD;

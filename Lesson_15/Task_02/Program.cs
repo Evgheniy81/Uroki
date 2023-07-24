@@ -30,6 +30,7 @@ if (c == "/")
 
 while (true)
 {
+    
     double firstNumber, secondNumber;  // объявляем вещестенные переменные
     string action;  // объявляем строчную переменную операторов
     /*
